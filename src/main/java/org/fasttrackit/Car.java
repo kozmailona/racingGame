@@ -15,6 +15,9 @@ public class Car {
     double fuelLevel;
     boolean damaged;
 
+    //has-a relationship / Aggregation (and composition)
+    Engine engine;
+
 
 
 }
