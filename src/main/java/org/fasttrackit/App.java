@@ -16,7 +16,7 @@ public class App
         carReference.maxSpeed = 260;                                                                        //ctrl+click pe maxSpeed -> informatii despre el
         carReference.mileage = 6.2;                                                                         // ca separator folosim '.'
 
-                                                                                                           //ctrl+alt+L -> reformat code
+                                                                                                            //ctrl+alt+L -> reformat code
 //        carReference.engine = new Engine();
 //        carReference.engine.manufacturer = "Volkswagen";            //ctrl+D duplicate line
 //        carReference.engine.capacity = 2000;        //ctrl + /
