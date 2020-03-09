@@ -77,6 +77,11 @@ public class App
         //ctrl+K -> commit
         //ctrl+shift+K -> push
 
+//        System.out.println();
+//        System.out.println(4 % 2 == 0);      //modulo; a maradekot szamolja ki
+//        System.out.println(4 % 2);      //modulo; a maradekot szamolja ki
+//        System.out.println(4 % 3);
+
 
     }
     //itt mar nem hivhatom meg a carReference-szel
