@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,13 @@ public class App
 {
     public static void main( String[] args )
     {
+        System.out.println("Please enter vehicle name: ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        System.out.println("Entered name: " + userInput);
+
+
+
         System.out.println( "Welcome to the racing game!" );
 
         Car carReference = new Car();                                                                       //un constructor al clasei
