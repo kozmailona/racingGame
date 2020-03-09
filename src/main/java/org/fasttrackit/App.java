@@ -15,6 +15,7 @@ public class App
         carReference.color = "red";
         carReference.maxSpeed = 260;                                                                        //ctrl+click pe maxSpeed -> informatii despre el
         carReference.mileage = 6.2;                                                                         // ca separator folosim '.'
+        carReference.fuelLevel = 100;
 
                                                                                                             //ctrl+alt+L -> reformat code
 //        carReference.engine = new Engine();
@@ -28,6 +29,11 @@ public class App
 
 
         carReference.engine = engine1;
+
+        double currentDistance = carReference.accelerate(60, 1);
+        System.out.println("Current distance: " + currentDistance);
+
+
         //One object with two references
 
         System.out.println("Engine details: ");
