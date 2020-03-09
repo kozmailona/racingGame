@@ -16,7 +16,7 @@ public class App
         carReference.maxSpeed = 260;                                                                        //ctrl+click pe maxSpeed -> informatii despre el
         carReference.mileage = 6.2;                                                                         // ca separator folosim '.'
         carReference.fuelLevel = 100;
-
+        carReference.damaged = true;
                                                                                                             //ctrl+alt+L -> reformat code
 //        carReference.engine = new Engine();
 //        carReference.engine.manufacturer = "Volkswagen";            //ctrl+D duplicate line
@@ -32,6 +32,11 @@ public class App
 
         double currentDistance = carReference.accelerate(60, 1);
         System.out.println("Current distance: " + currentDistance);
+
+        System.out.println();
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Is car damaged? " + carReference.damaged);
 
 
         //One object with two references
