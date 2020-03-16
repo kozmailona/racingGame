@@ -29,10 +29,14 @@ public class Vehicle {
         }
 
         //todo: use more fuel if speed > 120
+            double milaegeMultiplier = 1;
+            if (speed > 120) {
+                milaegeMultiplier = speed / 100;
 
+            }
 
+            System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
 
-        System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
 
         //local variables
         double travelDistance = speed * durationInHours;
@@ -44,6 +48,8 @@ public class Vehicle {
 
         double usedFuel = travelDistance * mileage / 100;
         System.out.println("Used fuel is " + usedFuel);
+
+        usedFuel *= milaegeMultiplier;
 
         fuelLevel = fuelLevel - usedFuel;
 
