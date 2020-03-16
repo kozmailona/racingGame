@@ -9,22 +9,22 @@ import java.util.Scanner;
 public class App {
 
     public static void main( String[] args ) {
-//        Game game= new Game();
-//        game.start();
-
-        Vehicle vehicle1 = new Vehicle();
-//        vehicle1.totalVehicleCount = 1;
-
-        Vehicle vehicle2 = new Vehicle();
-//        vehicle2.totalVehicleCount = 2;
-
-//        Vehicle.totalVehicleCount = 50;
-
-        System.out.println("Total count from vehicle 1: " + vehicle1.totalVehicleCount);
-        System.out.println("Total count from vehicle 1: " + vehicle2.totalVehicleCount);
-        System.out.println("Total count from Vehicle 1: " + Vehicle.totalVehicleCount);
-
-
+////        Game game= new Game();
+////        game.start();
+//
+//        Vehicle vehicle1 = new Vehicle();
+////        vehicle1.totalVehicleCount = 1;
+//
+//        Vehicle vehicle2 = new Vehicle();
+////        vehicle2.totalVehicleCount = 2;
+//
+////        Vehicle.totalVehicleCount = 50;
+//
+//        System.out.println("Total count from vehicle 1: " + vehicle1.getTotalVehicleCount());
+//        System.out.println("Total count from vehicle 1: " + vehicle2.getTotalVehicleCount());
+//        System.out.println("Total count from Vehicle 1: " + Vehicle.getTotalVehicleCount());
+//
+//
 
 
 //        System.out.println("Please enter vehicle name: ");
@@ -37,20 +37,20 @@ public class App {
 //        System.out.println( "Welcome to the racing game!" );
 //
 //
-        Engine engine1 = new Engine();
-        engine1.manufacturer = "Volkswagen";
-        engine1.capacity = 2000;
-
-        Car carReference = new Car(engine1);                                                                       //un
-        // constructor al clasei
-        carReference.setName("Audi");                                                                         //ctrl+shift+Enter -> beteszi a pontosvesszot, ctrl+click pe name,  vissza a mappaba, ahonnan hivtam
-        carReference.setColor("red");
-        carReference.setMaxSpeed(260);                                                                        //ctrl+click pe maxSpeed -> informatii despre el
-        carReference.setMileage(6.2);                                                                         // ca separator folosim '.'
-        carReference.setFuelLevel(100);
-        carReference.setDamaged(true);
-
-        System.out.println("Name: " + carReference.getName());
+//        Engine engine1 = new Engine();
+//        engine1.manufacturer = "Volkswagen";
+//        engine1.capacity = 2000;
+//
+//        Car carReference = new Car(engine1);                                                                       //un
+//        // constructor al clasei
+//        carReference.setName("Audi");                                                                         //ctrl+shift+Enter -> beteszi a pontosvesszot, ctrl+click pe name,  vissza a mappaba, ahonnan hivtam
+//        carReference.setColor("red");
+//        carReference.setMaxSpeed(260);                                                                        //ctrl+click pe maxSpeed -> informatii despre el
+//        carReference.setMileage(6.2);                                                                         // ca separator folosim '.'
+//        carReference.setFuelLevel(100);
+//        carReference.setDamaged(true);
+//
+//        System.out.println("Name: " + carReference.getName());
                                                                                                             //ctrl+alt+L -> reformat code
 //        carReference.engine = new Engine();
 //        carReference.engine.manufacturer = "Volkswagen";            //ctrl+D duplicate line

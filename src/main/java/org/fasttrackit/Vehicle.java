@@ -3,7 +3,7 @@ package org.fasttrackit;
 public class Vehicle {
 
     //static variable / class variable
-    static int totalVehicleCount;
+   private static int totalVehicleCount;
 
 
     //instance variables
@@ -143,6 +143,10 @@ public class Vehicle {
 
     public void setDamaged(boolean damaged) {
         this.damaged = damaged;
+    }
+//read-only property
+    public static int getTotalVehicleCount() {
+        return totalVehicleCount;
     }
 }
 
