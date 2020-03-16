@@ -37,18 +37,20 @@ public class App {
 //        System.out.println( "Welcome to the racing game!" );
 //
 //
-//        Engine engine1 = new Engine();
-//        engine1.manufacturer = "Volkswagen";
-//        engine1.capacity = 2000;
-//
-//        Car carReference = new Car(engine1);                                                                       //un
-//        // constructor al clasei
-//        carReference.name = "Audi";                                                                         //ctrl+shift+Enter -> beteszi a pontosvesszot, ctrl+click pe name,  vissza a mappaba, ahonnan hivtam
-//        carReference.color = "red";
-//        carReference.maxSpeed = 260;                                                                        //ctrl+click pe maxSpeed -> informatii despre el
-//        carReference.mileage = 6.2;                                                                         // ca separator folosim '.'
-//        carReference.fuelLevel = 100;
-//        carReference.damaged = true;
+        Engine engine1 = new Engine();
+        engine1.manufacturer = "Volkswagen";
+        engine1.capacity = 2000;
+
+        Car carReference = new Car(engine1);                                                                       //un
+        // constructor al clasei
+        carReference.setName("Audi");                                                                         //ctrl+shift+Enter -> beteszi a pontosvesszot, ctrl+click pe name,  vissza a mappaba, ahonnan hivtam
+        carReference.setColor("red");
+        carReference.setMaxSpeed(260);                                                                        //ctrl+click pe maxSpeed -> informatii despre el
+        carReference.setMileage(6.2);                                                                         // ca separator folosim '.'
+        carReference.setFuelLevel(100);
+        carReference.setDamaged(true);
+
+        System.out.println("Name: " + carReference.getName());
                                                                                                             //ctrl+alt+L -> reformat code
 //        carReference.engine = new Engine();
 //        carReference.engine.manufacturer = "Volkswagen";            //ctrl+D duplicate line
