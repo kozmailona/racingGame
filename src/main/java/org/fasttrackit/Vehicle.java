@@ -7,14 +7,14 @@ public class Vehicle {
 
 
     //instance variables
-    private int racingNumber;
-    private String name;
-    private int maxSpeed;
-    private double mileage;
-    private String color;
-    private double fuelLevel;
-    private double totalDistance;
-    private boolean damaged;
+     int racingNumber;
+     String name;
+     int maxSpeed;
+     double mileage;
+     String color;
+     double fuelLevel;
+     double totalDistance;
+     boolean damaged;
 
     public Vehicle() {
         totalVehicleCount++;

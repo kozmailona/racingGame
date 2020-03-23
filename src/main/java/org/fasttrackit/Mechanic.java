@@ -5,9 +5,9 @@ public class Mechanic {
     public void repair(Vehicle vehicle) {
 //        System.out.println("Repairing vehicle " + vehicle.name);
 //
-//        vehicle.totalDistance--;
-//        vehicle.damaged = false;
-//
+        vehicle.setTotalDistance(vehicle.getTotalDistance() - 1);
+        vehicle.setDamaged(false);
+
 //
  }
 }
