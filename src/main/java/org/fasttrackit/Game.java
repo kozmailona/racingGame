@@ -12,7 +12,8 @@ public class Game {
 
 
     }
-    public String getVehicleNameFromUser() {
+    private String getVehicleNameFromUser() {                                           //csak ebben a classban van
+                                                                                        // hozzaferesem
 
         System.out.println("Please enter vehicle name: ");
         Scanner scanner = new Scanner(System.in);

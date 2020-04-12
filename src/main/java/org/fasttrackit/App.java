@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import java.util.Scanner;
 
 /**
  * Hello world!
@@ -8,16 +9,31 @@ package org.fasttrackit;
 public class App {
 
     public static void main( String[] args ) {
-////        Game game= new Game();
-////        game.start();
-//
-//        Vehicle vehicle1 = new Vehicle();
-////        vehicle1.totalVehicleCount = 1;
-//
-//        Vehicle vehicle2 = new Vehicle();
-////        vehicle2.totalVehicleCount = 2;
-//
-////        Vehicle.totalVehicleCount = 50;
+
+        Game game = new Game();
+        game.start();
+
+        new AutoVehicle(new Engine());
+
+
+        CheatingVehicle cheater = new CheatingVehicle();
+        cheater.setName("Cheater");
+
+        cheater.accelerate(60,1);
+        System.out.println("Total distance: " + cheater.getTotalDistance());
+
+        //variable type decided what methods can be invoked
+        //type casting
+
+        ( (CheatingVehicle) cheater).fly();
+
+          Vehicle vehicle1 = new Vehicle();
+//        vehicle1.totalVehicleCount = 1;
+
+        Vehicle vehicle2 = new Vehicle();
+//        vehicle2.totalVehicleCount = 2;
+
+//        Vehicle.totalVehicleCount = 50;
 //
 //        System.out.println("Total count from vehicle 1: " + vehicle1.getTotalVehicleCount());
 //        System.out.println("Total count from vehicle 1: " + vehicle2.getTotalVehicleCount());
@@ -26,19 +42,21 @@ public class App {
 //
 
 
-//        System.out.println("Please enter vehicle name: ");
-//        Scanner scanner = new Scanner(System.in);
-//        String userInput = scanner.nextLine();
-//        System.out.println("Entered name: " + userInput);
-//
-//
-//
+        System.out.println("Please enter vehicle name: ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        System.out.println("Entered name: " + userInput);
+
+        Scanner scanner2 = new Scanner(System.in);
+        int enteredNumber = scanner2.nextInt();
+
 //        System.out.println( "Welcome to the racing game!" );
-//
-//
-//
-//
-        Car carReference = new Car();                                                                       //un
+
+        Engine engine1 = new Engine();
+        engine1.manufacturer = "Volkswagen";
+        engine1.capacity = 2000;
+
+        Car carReference = new Car(engine1);                                                                        //un
         // constructor al clasei
         carReference.setName("Audi");                                                                         //ctrl+shift+Enter -> beteszi a pontosvesszot, ctrl+click pe name,  vissza a mappaba, ahonnan hivtam
         carReference.setColor("red");
@@ -47,29 +65,25 @@ public class App {
         carReference.setFuelLevel(100);
         carReference.setDamaged(true);
 
+        System.out.println("Name: " + carReference.getName());
+        System.out.println(carReference);
+
         //        carReference.engine = new Engine();
         //        carReference.engine.manufacturer = "Volkswagen";            //ctrl+D duplicate line
         //        carReference.engine.capacity = 2000;        //ctrl + /
 
-        Engine engine1 = new Engine();
-                engine1.manufacturer = "Volkswagen";
-                engine1.capacity = 2000;
-
-        carReference.engine = engine1;
 
         double currentDistance = carReference.accelerate(60, 1);
         System.out.println("Current distance: " + currentDistance);
-
-//        System.out.println("Name: " + carReference.getName());
                                                                                                             //ctrl+alt+L -> reformat code
 
 //
 //
-//        System.out.println();
-//        Mechanic mechanic = new Mechanic();
-//        mechanic.repair(carReference);
-//        System.out.println("Is car damaged? " + carReference.damaged);
-//
+        System.out.println();
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Is car damaged? " + carReference.isDamaged());
+
 //
 //        //One object with two references
 //
@@ -86,15 +100,15 @@ public class App {
         System.out.println();
 //
 
-        //concatenation - tobb string osszeragasztasa; lipire de stringuri
-        System.out.println("Properties of " + carReference.name);
-        System.out.println("Color: " + carReference.color);                                                 //ha csak color-t irok? -> meg kell hivnom; variable scope; durata ei de viata
-        System.out.println("Max speed of the car: " + carReference.maxSpeed);
-        System.out.println("Mile age of the car: " + carReference.mileage);
-                //duplicate line??
-        System.out.println("Fuel level: " + carReference.fuelLevel);
-        System.out.println("Racing number: " + carReference.racingNumber);
-        System.out.println("Damaged: " + carReference.damaged);
+//        //concatenation - tobb string osszeragasztasa; lipire de stringuri
+//        System.out.println("Properties of " + carReference.name);
+//        System.out.println("Color: " + carReference.color);                                                 //ha csak color-t irok? -> meg kell hivnom; variable scope; durata ei de viata
+//        System.out.println("Max speed of the car: " + carReference.maxSpeed);
+//        System.out.println("Mile age of the car: " + carReference.mileage);
+//                //duplicate line??
+//        System.out.println("Fuel level: " + carReference.fuelLevel);
+//        System.out.println("Racing number: " + carReference.racingNumber);
+//        System.out.println("Damaged: " + carReference.damaged);
 //
 //        //carReference = null; -> am golit
 //
@@ -117,8 +131,8 @@ public class App {
 //        System.out.println(4 % 2 == 0);      //modulo; a maradekot szamolja ki
 //        System.out.println(4 % 2);      //modulo; a maradekot szamolja ki
 //        System.out.println(4 % 3);
-
-
-    }
+//
+//
+  }
     //itt mar nem hivhatom meg a carReference-szel
 }

@@ -3,37 +3,36 @@ package org.fasttrackit;
 public class Vehicle {
 
     //static variable / class variable
-   private static int totalVehicleCount;
-
+    private static int totalVehicleCount;
 
     //instance variables
-     int racingNumber;
-     String name;
-     int maxSpeed;
-     double mileage;
-     String color;
-     double fuelLevel;
-     double totalDistance;
-     boolean damaged;
-
-    public Vehicle() {
-        totalVehicleCount++;
-    }
+    private int racingNumber;
+    private String name;
+    private int maxSpeed;
+    private double mileage;
+    private String color;
+    private double fuelLevel;
+    private double totalDistance;
+    private boolean damaged;
 
     //method overloading
     public double accelerate(double speed) {
         return accelerate(speed, 1);
     }
 
-    public double accelerate (double speed, double durationInHours) {        //semnatura metodei / method signature
+    public Vehicle() {
+        totalVehicleCount++;
+    }
+
+    public double accelerate(double speed, double durationInHours) {        //semnatura metodei / method signature
         //corpul metodei
 
-        if(fuelLevel <= 0) {
+        if (fuelLevel <= 0) {
             System.out.println("Not enough fuel.");
             return 0;
         }
 
-        if (speed < maxSpeed) {
+        if (speed > maxSpeed) {
             System.out.println("Max speed exceeded.");
             return 0;
         } else if (speed == maxSpeed) {
@@ -43,13 +42,13 @@ public class Vehicle {
         }
 
         //todo: use more fuel if speed > 120
-            double milaegeMultiplier = 1;
-            if (speed > 120) {
-                milaegeMultiplier = speed / 100;
+        double milaegeMultiplier = 1;
+        if (speed > 120) {
+            milaegeMultiplier = speed / 100;
 
-            }
+        }
 
-            System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
+        System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
 
 
         //local variables
@@ -68,7 +67,7 @@ public class Vehicle {
         fuelLevel = fuelLevel - usedFuel;
 
         //same result
-       // fuelLevel -= usedFuel;
+        // fuelLevel -= usedFuel;
 
         System.out.println("Remaining fuel " + fuelLevel);
 
@@ -76,10 +75,10 @@ public class Vehicle {
 
     }
 
-        public void decelerate() {
+    public void decelerate() {
         //TODO: implement this
         System.out.println("This is just a demo method.");
-        }
+    }
 
     public int getRacingNumber() {
         return racingNumber;
@@ -144,11 +143,6 @@ public class Vehicle {
     public void setDamaged(boolean damaged) {
         this.damaged = damaged;
     }
-//read-only property
-    public static int getTotalVehicleCount() {
-        return totalVehicleCount;
-    }
 }
-
 
 
