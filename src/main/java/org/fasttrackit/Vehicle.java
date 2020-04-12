@@ -15,13 +15,15 @@ public class Vehicle {
     private double totalDistance;
     private boolean damaged;
 
-    //method overloading
-    public double accelerate(double speed) {
-        return accelerate(speed, 1);
-    }
+
 
     public Vehicle() {
         totalVehicleCount++;
+    }
+
+    //method overloading
+    public double accelerate(double speed) {
+        return accelerate(speed, 1);
     }
 
     public double accelerate(double speed, double durationInHours) {        //semnatura metodei / method signature
