@@ -145,6 +145,11 @@ public class Vehicle {
     public void setDamaged(boolean damaged) {
         this.damaged = damaged;
     }
+
+    //read-only property
+    public static int getTotalVehicleCount() {
+        return totalVehicleCount;
+    }
 }
 
 

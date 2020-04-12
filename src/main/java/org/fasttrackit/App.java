@@ -34,10 +34,10 @@ public class App {
 //        vehicle2.totalVehicleCount = 2;
 
 //        Vehicle.totalVehicleCount = 50;
-//
-//        System.out.println("Total count from vehicle 1: " + vehicle1.getTotalVehicleCount());
-//        System.out.println("Total count from vehicle 1: " + vehicle2.getTotalVehicleCount());
-//        System.out.println("Total count from Vehicle 1: " + Vehicle.getTotalVehicleCount());
+
+        System.out.println("Total count from vehicle 1: " + vehicle1.getTotalVehicleCount());
+        System.out.println("Total count from vehicle 1: " + vehicle2.getTotalVehicleCount());
+        System.out.println("Total count from Vehicle 1: " + Vehicle.getTotalVehicleCount());
 //
 //
 
