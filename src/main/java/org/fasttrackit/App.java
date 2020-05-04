@@ -10,10 +10,10 @@ public class App {
 
     public static void main( String[] args ) {
 
-        Game game = new Game();
-        game.start();
-
-        new AutoVehicle(new Engine());
+//        Game game = new Game();
+//        game.start();
+//
+//        new AutoVehicle(new Engine());
 
 
         CheatingVehicle cheater = new CheatingVehicle();
@@ -38,19 +38,19 @@ public class App {
         System.out.println("Total count from vehicle 1: " + vehicle1.getTotalVehicleCount());
         System.out.println("Total count from vehicle 1: " + vehicle2.getTotalVehicleCount());
         System.out.println("Total count from Vehicle 1: " + Vehicle.getTotalVehicleCount());
-//
-//
 
 
-        System.out.println("Please enter vehicle name: ");
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        System.out.println("Entered name: " + userInput);
+//        System.out.println("Please enter vehicle name: ");
+//        Scanner scanner = new Scanner(System.in);
+//        String userInput = scanner.nextLine();
+//        System.out.println("Entered name: " + userInput);
 
         Scanner scanner2 = new Scanner(System.in);
         int enteredNumber = scanner2.nextInt();
 
-//        System.out.println( "Welcome to the racing game!" );
+       System.out.println( "Welcome to the racing game!" );
+
+       Car car = new Car();
 
         Engine engine1 = new Engine();
         engine1.manufacturer = "Volkswagen";
@@ -89,14 +89,14 @@ public class App {
 //
         System.out.println("Engine details: ");
         System.out.println(engine1.capacity);
-        System.out.println(carReference.engine.capacity);
+        System.out.println(carReference.getEngine().capacity);
         System.out.println();
 
         engine1.capacity = 2100;
 
         System.out.println("Updated engine details: ");
         System.out.println(engine1.capacity);
-        System.out.println(carReference.engine.capacity);
+        System.out.println(carReference.getEngine().capacity);
         System.out.println();
 //
 

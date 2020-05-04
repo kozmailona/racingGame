@@ -13,6 +13,10 @@ public class CheatingVehicle extends Vehicle {
         return distance;
 
     }
+    //access can be more permissive than is super-class; nu poate sa fie mai restrictiv
+    public CheatingVehicle clone() {
+        return new CheatingVehicle();
+    }
 
     public void fly() {
         System.out.println("Flying!");
