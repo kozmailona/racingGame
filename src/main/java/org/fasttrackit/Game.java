@@ -17,6 +17,9 @@ public class  Game {
 
         initializeTracks();
         displayTracks();
+        Track selectedTrack = getSelectedTrackFromUser();
+        System.out.println("Selected track: " + selectedTrack.getName());
+
     }
 
     private void initializeTracks() {
@@ -52,6 +55,12 @@ public class  Game {
         }
     }
 
+    private Track getSelectedTrackFromUser() {
+        System.out.println("Please select a track.");
+        Scanner scanner = new Scanner(System.in);
+        int trackNumber = scanner.nextInt();
+        return tracks[trackNumber - 1];
+    }
 
     private String getVehicleNameFromUser() {                                           //csak ebben a classban van
                                                                                         // hozzaferesem
