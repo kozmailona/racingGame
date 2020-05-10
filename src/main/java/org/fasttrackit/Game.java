@@ -1,10 +1,15 @@
 package org.fasttrackit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class  Game {
 
     private Track[] tracks = new Track[3];
+    private List<Vehicle> competitors = new ArrayList<>();
+
 
 
     private Vehicle competitor1;
@@ -13,14 +18,50 @@ public class  Game {
     public void start() {
         System.out.println("Welcome!");
 
-        int playerCount = getPlayerCountFromUser();
-
         initializeTracks();
         displayTracks();
         Track selectedTrack = getSelectedTrackFromUser();
         System.out.println("Selected track: " + selectedTrack.getName());
 
+        initializeCompetitors();
+
+        playOneRound();
+
+        String test = "a b c d";
+        String[] letters = test.split(" ");
+        System.out.println(letters);
+
+        Integer.parseInt(letters[0]);
     }
+
+    private void playOneRound() {
+        System.out.println("New round: ");
+
+        for (Vehicle vehicle : competitors) {
+            vehicle.accelerate(100);
+        }
+
+    }
+
+
+    private void initializeCompetitors() {
+        int playerCount = getPlayerCountFromUser();
+
+        for (int i = 0; i < playerCount; i++) {
+            System.out.println("Creating vehicle for player " + (i + 1));
+            String name = getVehicleNameFromUser();
+
+            Vehicle vehicle = new Vehicle();
+            vehicle.setName(name);
+            vehicle.setFuelLevel(80);
+            vehicle.setMaxSpeed(260);
+            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(5, 15)); //limita inferioara, si limita exterioara
+
+
+            competitors.add(vehicle);
+        }
+    }
+
 
     private void initializeTracks() {
         Track track1 = new Track();
