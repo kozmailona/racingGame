@@ -27,18 +27,23 @@ public class  Game {
 
         playOneRound();
 
-        String test = "a b c d";
-        String[] letters = test.split(" ");
-        System.out.println(letters);
+//        String test = "a b c d";
+//        String[] letters = test.split(" ");
+//        System.out.println(letters);
 
-        Integer.parseInt(letters[0]);
+//        Integer.parseInt(letters[0]);
     }
 
     private void playOneRound() {
-        System.out.println("New round: ");
+        System.out.println("\nNew round: ");
 
         for (Vehicle vehicle : competitors) {
-            vehicle.accelerate(100);
+            System.out.println("It is " + vehicle.getName() + "'s turn.");
+            double speed = getAccelerationFromUser();
+
+
+            vehicle.accelerate(speed);
+            System.out.println();
         }
 
     }
@@ -117,5 +122,11 @@ public class  Game {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
 
+    }
+
+    private double getAccelerationFromUser() {
+        System.out.println("Please enter acceleration speed: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextDouble();
     }
 }
