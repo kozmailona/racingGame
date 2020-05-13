@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,7 +16,7 @@ public class  Game {
     private Vehicle competitor1;
     private Vehicle competitor2;
 
-    public void start() {
+    public void start() throws Exception {
         System.out.println("Welcome!");
 
         initializeTracks();
@@ -101,11 +102,20 @@ public class  Game {
         }
     }
 
-    private Track getSelectedTrackFromUser() {
+    private Track getSelectedTrackFromUser() throws Exception {
         System.out.println("Please select a track.");
-        Scanner scanner = new Scanner(System.in);
-        int trackNumber = scanner.nextInt();
-        return tracks[trackNumber - 1];
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+            int trackNumber = scanner.nextInt();
+            return tracks[trackNumber - 1];
+        } catch (InputMismatchException e) {
+            throw new Exception("You have entered an invalid option.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new RuntimeException("Wrong number entered.");
+        } finally {
+            System.out.println("Finally block always executed. ");
+        }
     }
 
     private String getVehicleNameFromUser() {                                           //csak ebben a classban van
