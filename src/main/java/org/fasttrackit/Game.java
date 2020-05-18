@@ -10,7 +10,9 @@ public class  Game {
 
     private Track[] tracks = new Track[3];
     private List<Vehicle> competitors = new ArrayList<>();
-
+    private Track selectedTrack;
+    private boolean winnerNotKnown = true;      //deci nu cunoastem castigatorul
+    private int competitorsWithoutFuel = 0;
 
 
     private Vehicle competitor1;
@@ -26,6 +28,9 @@ public class  Game {
 
         initializeCompetitors();
 
+        while (winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
+            playOneRound();
+        }
         playOneRound();
 
 //        String test = "a b c d";
@@ -42,8 +47,19 @@ public class  Game {
             System.out.println("It is " + vehicle.getName() + "'s turn.");
             double speed = getAccelerationFromUser();
 
-
             vehicle.accelerate(speed);
+
+            if (selectedTrack.getLength() <= vehicle.getTotalDistance()) {
+                System.out.println("The winner is: " + vehicle.getName());
+                winnerNotKnown = false;
+
+                break;
+            }
+
+            if (vehicle.getFuelLevel() <= 0) {
+                competitorsWithoutFuel++;
+            }
+
             System.out.println();
         }
 
