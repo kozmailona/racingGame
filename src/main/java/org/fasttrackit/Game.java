@@ -16,9 +16,8 @@ public class  Game {
     private boolean winnerNotKnown = true;      //deci nu cunoastem castigatorul
     private int competitorsWithoutFuel = 0;
 
+    //int[][] matrix = new int[3][5];
 
-    private Vehicle competitor1;
-    private Vehicle competitor2;
 
     public void start() throws Exception {
         System.out.println("Welcome!");
@@ -26,13 +25,14 @@ public class  Game {
         initializeTracks();
         displayTracks();
 
-        Track selectedTrack = getSelectedTrackFromUser();
+        selectedTrack = getSelectedTrackFromUser();
         System.out.println("Selected track: " + selectedTrack.getName());
 
         initializeCompetitors();
 
-        while (winnerNotKnown && competitorsWithoutFuel < competitors.size())
+        while (winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
             playOneRound();
+        }
 
 //        String test = "a b c d";
 //        String[] letters = test.split(" ");
@@ -44,11 +44,12 @@ public class  Game {
     private void playOneRound() {
         System.out.println("\nNew round: ");
 
+        //enhanced for (for-each)
         for (Vehicle vehicle : competitors) {
             System.out.println("It is " + vehicle.getName() + "'s turn.");
             double speed = getAccelerationFromUser();
 
-            double accelerate = vehicle.accelerate(speed);//double accelerate = vehicle.accelerate(speed); ez volt
+            vehicle.accelerate(speed);
 
             if (selectedTrack.getLength() <= vehicle.getTotalDistance()) {
                 System.out.println("The winner is: " + vehicle.getName());
@@ -97,16 +98,16 @@ public class  Game {
         track2.setLength(4000);
 
         tracks[1] = track2;
-
-        Track track3 = new Track();
-        track3.setName("Babi");
-        track3.setLength(4500);
-
-        tracks[2] = track3;
+//
+//        Track track3 = new Track();
+//        track3.setName("Babi");
+//        track3.setLength(4500);
+//
+//        tracks[2] = track3;
 
     }
 
-    public void displayTracks() {
+    private void displayTracks() {
         System.out.println("Available tracks: ");
 
         //classic for loop
@@ -141,7 +142,7 @@ public class  Game {
 
     }
 
-    public int getPlayerCountFromUser() {
+    private int getPlayerCountFromUser() {
         System.out.println("Please enter number of players: ");
         return ScannerUtils.nextSingleInt();
 
@@ -155,7 +156,7 @@ public class  Game {
         } catch (InputMismatchException e) {
             System.out.println("You have entered an invalid value, please, try  again.");
             //recursion
-            return  getAccelerationFromUser();
+            return getAccelerationFromUser();
         }
     }
 }

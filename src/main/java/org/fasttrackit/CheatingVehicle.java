@@ -2,6 +2,8 @@ package org.fasttrackit;
 
 public class CheatingVehicle extends Vehicle {
 
+    public static final String TYPE = "CHEATER";
+
     @Override
     public double accelerate(double speed, double durationInHours) {
         System.out.println(getName() + " is accelerating with " + speed + " for " + durationInHours  + " h.");

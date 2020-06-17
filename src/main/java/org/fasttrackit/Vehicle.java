@@ -44,9 +44,9 @@ public class Vehicle {
         }
 
         //todo: use more fuel if speed > 120
-        double milaegeMultiplier = 1;
+        double mileageMultiplier = 1;
         if (speed > 120) {
-            milaegeMultiplier = speed / 100;
+            mileageMultiplier = speed / 100;
 
         }
 
@@ -54,17 +54,17 @@ public class Vehicle {
 
 
         //local variables
-        double travelDistance = speed * durationInHours;
-        System.out.println("Travel distance " + travelDistance);
+        double traveledDistance = speed * durationInHours;
+        System.out.println("Traveled distance " + traveledDistance);
 
-        totalDistance += travelDistance;
+        totalDistance += traveledDistance;
         System.out.println("Total travel distance " + totalDistance);
 
 
-        double usedFuel = travelDistance * mileage / 100;
+        double usedFuel = traveledDistance * mileage / 100;
         System.out.println("Used fuel is " + usedFuel);
 
-        usedFuel *= milaegeMultiplier;
+        usedFuel *= mileageMultiplier;
 
         fuelLevel = fuelLevel - usedFuel;
 
@@ -73,7 +73,7 @@ public class Vehicle {
 
         System.out.println("Remaining fuel " + fuelLevel);
 
-        return travelDistance;
+        return traveledDistance;
 
     }
 
@@ -167,7 +167,7 @@ public class Vehicle {
                 ", color='" + color + '\'' +
                 ", fuelLevel=" + fuelLevel +
                 ", totalDistance=" + totalDistance +
-                ", damaged=" + damaged +
+                ", password=" + damaged +
                 '}';
     }
 }
