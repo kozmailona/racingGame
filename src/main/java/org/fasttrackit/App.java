@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -7,6 +9,32 @@ package org.fasttrackit;
 public class App {
 
     public static void main( String[] args ) throws Exception {
+
+//        Scanner scanner = new Scanner(System.in);
+//
+////        try {
+////            System.out.println("Enter number: ");
+////            int integer = scanner.nextInt();
+////            scanner.nextLine();
+////            System.out.println("Entered: " + integer);
+////        } catch (Exception e) {
+////            System.out.println("Invalid number!");
+////            scanner.nextLine();
+////        }
+//
+//        System.out.println("Enter numbers: ");
+//        int integer1 = scanner.nextInt();
+//        int integer2 = scanner.nextInt();
+//        int integer3 = scanner.nextInt();
+//        int integer4 = scanner.nextInt();
+//        System.out.println("Entered: " + integer1);
+//        System.out.println("Entered: " + integer2);
+//        System.out.println("Entered: " + integer3);
+//        System.out.println("Entered: " + integer4);
+//
+////        System.out.println("Enter string2: ");
+////        String s2 = scanner.nextLine();
+////        System.out.println("Entered: " + s2);
 
         Game game = new Game();
         game.start();

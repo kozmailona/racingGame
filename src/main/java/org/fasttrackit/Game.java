@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import org.fasttrackit.utils.ScannerUtils;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -23,15 +25,14 @@ public class  Game {
 
         initializeTracks();
         displayTracks();
+
         Track selectedTrack = getSelectedTrackFromUser();
         System.out.println("Selected track: " + selectedTrack.getName());
 
         initializeCompetitors();
 
-        while (winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
+        while (winnerNotKnown && competitorsWithoutFuel < competitors.size())
             playOneRound();
-        }
-        playOneRound();
 
 //        String test = "a b c d";
 //        String[] letters = test.split(" ");
@@ -47,12 +48,11 @@ public class  Game {
             System.out.println("It is " + vehicle.getName() + "'s turn.");
             double speed = getAccelerationFromUser();
 
-            vehicle.accelerate(speed);
+            double accelerate = vehicle.accelerate(speed);//double accelerate = vehicle.accelerate(speed); ez volt
 
             if (selectedTrack.getLength() <= vehicle.getTotalDistance()) {
                 System.out.println("The winner is: " + vehicle.getName());
                 winnerNotKnown = false;
-
                 break;
             }
 
@@ -122,8 +122,7 @@ public class  Game {
         System.out.println("Please select a track.");
 
         try {
-            Scanner scanner = new Scanner(System.in);
-            int trackNumber = scanner.nextInt();
+            int trackNumber = ScannerUtils.nextSingleInt();
             return tracks[trackNumber - 1];
         } catch (InputMismatchException e) {
             throw new Exception("You have entered an invalid option.");
@@ -138,25 +137,21 @@ public class  Game {
                                                                                         // hozzaferesem
 
         System.out.println("Please enter vehicle name: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return ScannerUtils.nextLine();
 
     }
 
     public int getPlayerCountFromUser() {
         System.out.println("Please enter number of players: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        return ScannerUtils.nextSingleInt();
 
     }
 
     private double getAccelerationFromUser() {
         System.out.println("Please enter acceleration speed: ");
-        Scanner scanner = new Scanner(System.in);
-
 
         try {
-            return scanner.nextDouble();
+            return ScannerUtils.nextSingleDouble();
         } catch (InputMismatchException e) {
             System.out.println("You have entered an invalid value, please, try  again.");
             //recursion
