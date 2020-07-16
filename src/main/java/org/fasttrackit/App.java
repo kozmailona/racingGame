@@ -1,6 +1,6 @@
 package org.fasttrackit;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Hello world!
@@ -10,7 +10,37 @@ public class App {
 
     public static void main( String[] args ) throws Exception {
 
-//        Scanner scanner = new Scanner(System.in);
+        Game game = new Game();
+        game.start();
+
+//        Map<String, Integer> studentAge = new HashMap<>();
+//        studentAge.put("Ilona", 23);
+//        studentAge.put("Lara", 21);
+//        studentAge.put("Alex", 24);
+//
+//        Integer age = studentAge.get("Lara");
+//
+//        for (Map.Entry<String, Integer> entry : studentAge.entrySet()) {
+//            System.out.println("Key: " + entry.getKey());
+//            System.out.println("Value: " + entry.getValue());
+//        }
+
+        //    //wrapper class
+//        Set<Integer> uniqueIntegers = new HashSet<>();
+//        uniqueIntegers.add(1);
+//        uniqueIntegers.add(2);
+//        uniqueIntegers.add(3);
+//        uniqueIntegers.add(3);
+//
+//        Iterator<Integer> iterator = uniqueIntegers.iterator();
+//
+//        //auto-boxing and auto unboxing
+//        while (iterator.hasNext()) {
+//            int next = iterator.next();
+//            System.out.println(next);
+//        }
+
+        //        Scanner scanner = new Scanner(System.in);
 //
 ////        try {
 ////            System.out.println("Enter number: ");
@@ -35,10 +65,6 @@ public class App {
 ////        System.out.println("Enter string2: ");
 ////        String s2 = scanner.nextLine();
 ////        System.out.println("Entered: " + s2);
-
-        Game game = new Game();
-        game.start();
-
 
 //        //String pool
 //        String a = "test";
