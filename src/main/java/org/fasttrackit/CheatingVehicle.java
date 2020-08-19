@@ -24,4 +24,5 @@ public class CheatingVehicle extends Vehicle {
         System.out.println("Flying!!");
 
     }
+
 }
